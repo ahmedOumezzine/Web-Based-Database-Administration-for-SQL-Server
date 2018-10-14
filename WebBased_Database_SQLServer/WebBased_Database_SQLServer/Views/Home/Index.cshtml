@@ -1,20 +1,27 @@
 ﻿@{
     ViewBag.Title = "Home Page";
+    ViewBag.SubTitle = "SubTitle Home Page";
+    var ctx = new WebBased_Database_SQLServer.Models.ApplicationDbContext();
+    var databases = ctx.Database.SqlQuery<WebBased_Database_SQLServer.Models.database>("SELECT name, database_id, create_date  FROM sys.databases where suser_sname(owner_sid) !='sa'").ToList();
+
 }
 
-<hr class="new-section-sm bord-no">
 <div class="row">
-    <div class="col-lg-8 col-lg-offset-2">
-        <div class="panel panel-body text-center">
-            <div class="panel-heading">
-                <h3>Your content here...</h3>
-            </div>
-            <div class="panel-body">
-                <p>
-                    Start putting content on grids or panels, you can also use different combinations of grids.
-                    <br>Please check out the dashboard and other pages.
-                </p>
+    @foreach (var database in databases)
+    {
+        <div class="col-md-2">
+            <div class="panel">
+                <div class="panel-body text-center">
+                    <div class="pad-ver mar-top text-main"><i class="demo-pli-data-settings icon-4x"></i></div>
+                    <p class="text-lg text-semibold mar-no text-main">@database.name</p>
+                    <p class="text-muted">32TB Total storage</p>
+                    <a href="@Url.Action("Index","Table",new {name = database.name })" class="btn btn-primary mar-ver">Get it now</a>
+                </div>
             </div>
         </div>
-    </div>
+    }
+
+
 </div>
+
+<!--End page content-->
