@@ -1,9 +1,9 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
-    ViewBag.SubTitle = "SubTitle Home Page";
+    ViewBag.Title = ViewBag.database_name;
     var ctx = new WebBased_Database_SQLServer.Models.ApplicationDbContext();
     string sql = "select TABLE_CATALOG,TABLE_NAME from  " + ViewBag.database_name + ".INFORMATION_SCHEMA.TABLES; ";
     var tables = ctx.Database.SqlQuery<WebBased_Database_SQLServer.Models.Table>(sql).OrderBy(x => x.TABLE_NAME).ToList();
+    ViewBag.SubTitle = tables.Count +" tables";
 
 }
 

@@ -74,18 +74,18 @@
                             <tr>
                                 @foreach (var Column in Columns)
                                 {
-                                    if (Column.DATA_TYPE == "varbinary")
+                                    @*if (Column.DATA_TYPE == "varbinary")
                                     {
-                                        byte[] fileFromDatabase = (byte[])row["" + @Column.COLUMN_NAME + ""];
+                                        byte[] fileFromDatabase = (byte[])row["" + Column.COLUMN_NAME + ""];
                                         var imgSrc = String.Format("data:image/png;base64,{0}", Convert.ToBase64String(fileFromDatabase));
                                 <td> 
                                     <img src="@imgSrc"  style=" height: 115px; "/>
                                 </td>
                                     }
                                     else
-                                    {
+                                    {*@
                                         <td>@row["" + @Column.COLUMN_NAME + ""]</td>
-                                    }
+                                    @*}*@
                                 }
                             </tr>
                             }
