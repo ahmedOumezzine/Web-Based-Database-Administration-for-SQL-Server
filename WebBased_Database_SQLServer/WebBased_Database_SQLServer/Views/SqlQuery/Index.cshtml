@@ -3,43 +3,25 @@
     ViewBag.Title = "SQL Query Syntax Check & Validator";
 }
 
-<div class="">
-    <div class="panel-body">
-        @using (Html.BeginForm("Index", "SqlQuery", FormMethod.Post))
-        {
-            @Html.AntiForgeryToken()
-            <div class="form-group">
-                <label class="col-md-3 control-label" for="demo-textarea-input">
-                    Please enter an SQL query to validate:
-                </label>
-                <div class="col-md-9">
-                    <textarea id="demo-textarea-input" name="RequestSQL" rows="9" class="form-control" placeholder="Your content here..">@ViewBag.RequestSQL</textarea>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-offset-11 col-md-10">
-                    <input type="submit" value="Check" class="btn btn-default" />
-                </div>
-            </div>
-        }
+<link href="~/Scripts/sqlquery/sqlite-parser.css" rel="stylesheet" />
+
+<div class="row shy">
+    <div class="col-6">
+        <div class="left" id="sql">
+            <h3 id="sql-header">SQL Statement</h3>
+            <textarea id="sql-text">
+ 
+        </textarea>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="right" id="ast">
+            <h3 id="ast-header">Syntax Tree</h3>
+
+            <textarea id="ast-text" style="display:none;"></textarea>
+        </div>
     </div>
 </div>
-    @{ int varcount = 0; }
-
-@if (ViewBag.error != null)
-{
-    foreach (var item in ViewBag.error)
-    {
-        <div class="alert alert-danger">
-            @item
-        </div>
-        varcount++;
-    }
-    if (varcount==0)
-    {
-
-        <div class="alert alert-info">
-            <strong>Good work!!</strong> query's syntax is valid.
-        </div>
-    }
-}
+<script src="~/Scripts/sqlquery/sqlite-parser.js"></script>
+ 
+ 
