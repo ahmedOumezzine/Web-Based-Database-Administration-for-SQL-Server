@@ -1,0 +1,65 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    ViewBag.SubTitle = "SubTitle Home Page";
+    var ctx = new WebBased_Database_SQLServer.Models.ApplicationDbContext();
+    var databases = ctx.Database.SqlQuery<WebBased_Database_SQLServer.Models.database>("SELECT name, database_id, create_date  FROM sys.databases where suser_sname(owner_sid) !='sa'").ToList();
+
+}
+
+<div class="  row">
+
+    <div style=" float: left;   ">
+        <input class="form-control" placeholder="Search Me" id="box" type="text" />
+
+    </div>
+    <div style="float: right;margin-top: 17px;margin-right: 18px;">
+
+        <a href="@Url.Action("add","Databases")" class="btn btn-warning btn-icon btn-circle"><i class="ti-plus"></i></a>
+    </div>
+
+</div>
+<div class="row">
+    @foreach (var database in databases)
+    {
+        <div class="col-md-2 connect-cat" catname="@database.name">
+            <div class="panel">
+                <div class="panel-body text-center">
+                    <div class="pad-ver mar-top text-main"><i class="demo-pli-data-settings icon-4x"></i></div>
+                    <p class="text-lg text-semibold mar-no text-main name">@database.name</p>
+                    <p class="text-muted">32TB Total storage</p>
+
+                    <a href="@Url.Action("Show","Databases",new {name = database.name })" class="btn btn-pink btn-icon btn-circle"><i class="ti-eye"></i></a>
+                    <a href="@Url.Action("Edit","Databases",new {name = database.name })" class="btn btn-purple btn-icon btn-circle"><i class="ti-settings"></i></a>
+                    <a href="@Url.Action("Delet","Databases",new {name = database.name })" class="btn btn-danger btn-icon btn-circle"><i class="ti-close"></i></a>
+                </div>
+            </div>
+        </div>
+    }
+
+
+</div>
+
+<!--End page content-->
+
+
+<style>
+    div.connect-cat {
+    }
+
+    #box {
+        margin: 20px;
+    }
+</style>
+<script>
+    document.getElementById("box").oninput=function(){
+  var matcher = new RegExp(document.getElementById("box").value, "gi");
+  for (var i=0;i<document.getElementsByClassName("connect-cat").length;i++) {
+    if (matcher.test(document.getElementsByClassName("name")[i].innerHTML)) {
+      document.getElementsByClassName("connect-cat")[i].style.display="inline-block";
+    } else {
+      document.getElementsByClassName("connect-cat")[i].style.display="none";
+    }
+
+  }
+}
+</script>

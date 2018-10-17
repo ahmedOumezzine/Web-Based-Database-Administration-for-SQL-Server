@@ -7,7 +7,18 @@
 
 }
 
-<input placeholder="Search Me" id="box" type="text" />
+<div class="  row">
+
+    <div style=" float: left;   ">
+        <input class="form-control" placeholder="Search Me" id="box" type="text" />
+
+    </div>
+    <div style="float: right;margin-top: 17px;margin-right: 18px;">
+
+        <a href="@Url.Action("add","Table")" class="btn btn-warning btn-icon btn-circle"><i class="ti-plus"></i></a>
+    </div>
+
+</div>
 
 <div class="row">
     @foreach (var table in tables)
@@ -18,7 +29,9 @@
                     <div class="pad-ver mar-top text-main"><i class="demo-pli-data-settings icon-4x"></i></div>
                     <p class="text-lg text-semibold mar-no text-main name">@table.TABLE_NAME</p>
                     <p class="text-muted">32TB Total storage</p>
-                    <a href="@Url.Action("show","Table",new {name=table.TABLE_CATALOG, tablename=table.TABLE_NAME})" class="btn btn-primary mar-ver">Get it now</a>
+                    <a href="@Url.Action("show","Table",new {name=table.TABLE_CATALOG, tablename=table.TABLE_NAME})" class="btn btn-pink btn-icon btn-circle"><i class="ti-eye"></i></a>
+                    <a href="@Url.Action("Edit","Table",new {name=table.TABLE_CATALOG, tablename=table.TABLE_NAME})" class="btn btn-purple btn-icon btn-circle"><i class="ti-settings"></i></a>
+                    <a href="@Url.Action("Delet","Table",new {name=table.TABLE_CATALOG, tablename=table.TABLE_NAME})" class="btn btn-danger btn-icon btn-circle"><i class="ti-close"></i></a>
                 </div>
             </div>
         </div>

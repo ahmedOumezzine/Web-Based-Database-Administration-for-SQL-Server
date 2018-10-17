@@ -39,5 +39,42 @@ namespace WebBased_Database_SQLServer.Controllers
 
             return View(ds);
         }
+
+   
+        [HttpGet]
+        public ActionResult add(String name, String tablename)
+        {
+            ViewBag.database_name = name;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult add()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Edit(String name, String tablename)
+        {
+            ViewBag.database_name = name;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Edit()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Delet(String name, String tablename)
+        {
+            ViewBag.database_name = name;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Delet()
+        {
+            return View();
+        }
     }
 }

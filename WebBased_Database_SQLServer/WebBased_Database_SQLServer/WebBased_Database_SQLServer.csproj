@@ -188,6 +188,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CloudsController.cs" />
+    <Compile Include="Controllers\DatabasesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TableController.cs" />
@@ -1213,6 +1215,15 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Clouds\Index.cshtml" />
+    <Content Include="Views\Databases\Index.cshtml" />
+    <Content Include="Views\Databases\Delet.cshtml" />
+    <Content Include="Views\Databases\Edit.cshtml" />
+    <Content Include="Views\Databases\Show.cshtml" />
+    <Content Include="Views\Databases\add.cshtml" />
+    <Content Include="Views\Table\add.cshtml" />
+    <Content Include="Views\Table\Edit.cshtml" />
+    <Content Include="Views\Table\Delet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
