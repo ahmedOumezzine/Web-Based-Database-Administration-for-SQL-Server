@@ -197,6 +197,7 @@
     <Compile Include="Controllers\CloudsController.cs" />
     <Compile Include="Controllers\DatabasesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoggersController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\SqlQueryController.cs" />
     <Compile Include="Controllers\TableController.cs" />
@@ -1234,6 +1235,7 @@
     <Content Include="Views\Table\Edit.cshtml" />
     <Content Include="Views\Table\Delet.cshtml" />
     <Content Include="Views\SqlQuery\Index.cshtml" />
+    <Content Include="Views\Loggers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

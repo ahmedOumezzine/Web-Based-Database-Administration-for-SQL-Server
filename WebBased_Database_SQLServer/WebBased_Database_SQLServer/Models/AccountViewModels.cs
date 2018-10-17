@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace WebBased_Database_SQLServer.Models
 {
+   
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
