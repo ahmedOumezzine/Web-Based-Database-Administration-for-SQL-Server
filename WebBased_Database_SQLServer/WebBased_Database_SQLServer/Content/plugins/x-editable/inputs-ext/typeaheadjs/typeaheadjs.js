@@ -1,7 +1,6 @@
 /**
-Typeahead.js input, based on [Twitter Typeahead](http://twitter.github.io/typeahead.js).   
+Typeahead.js input, based on [Twitter Typeahead](http://twitter.github.io/typeahead.js).
 It is mainly replacement of typeahead in Bootstrap 3.
-
 
 @class typeaheadjs
 @extends text
@@ -16,13 +15,13 @@ $(function(){
         typeahead: {
             name: 'country',
             local: [
-                {value: 'ru', tokens: ['Russia']}, 
-                {value: 'gb', tokens: ['Great Britain']}, 
+                {value: 'ru', tokens: ['Russia']},
+                {value: 'gb', tokens: ['Great Britain']},
                 {value: 'us', tokens: ['United States']}
             ],
             template: function(item) {
-                return item.tokens[0] + ' (' + item.value + ')'; 
-            } 
+                return item.tokens[0] + ' (' + item.value + ')';
+            }
         }
     });
 });
@@ -30,7 +29,7 @@ $(function(){
 **/
 (function ($) {
     "use strict";
-    
+
     var Constructor = function (options) {
         this.init('typeaheadjs', options, Constructor.defaults);
     };
@@ -38,49 +37,48 @@ $(function(){
     $.fn.editableutils.inherit(Constructor, $.fn.editabletypes.text);
 
     $.extend(Constructor.prototype, {
-        render: function() {
+        render: function () {
             this.renderClear();
             this.setClass();
             this.setAttr('placeholder');
             this.$input.typeahead(this.options.typeahead);
-            
+
             // copy `input-sm | input-lg` classes to placeholder input
-            if($.fn.editableform.engine === 'bs3') {
-                if(this.$input.hasClass('input-sm')) {
+            if ($.fn.editableform.engine === 'bs3') {
+                if (this.$input.hasClass('input-sm')) {
                     this.$input.siblings('input.tt-hint').addClass('input-sm');
                 }
-                if(this.$input.hasClass('input-lg')) {
+                if (this.$input.hasClass('input-lg')) {
                     this.$input.siblings('input.tt-hint').addClass('input-lg');
                 }
             }
         }
-    });      
+    });
 
     Constructor.defaults = $.extend({}, $.fn.editabletypes.list.defaults, {
         /**
-        @property tpl 
+        @property tpl
         @default <input type="text">
-        **/         
-        tpl:'<input type="text">',
+        **/
+        tpl: '<input type="text">',
         /**
-        Configuration of typeahead itself. 
+        Configuration of typeahead itself.
         [Full list of options](https://github.com/twitter/typeahead.js#dataset).
-        
-        @property typeahead 
+
+        @property typeahead
         @type object
         @default null
         **/
         typeahead: null,
         /**
-        Whether to show `clear` button 
-        
-        @property clear 
+        Whether to show `clear` button
+
+        @property clear
         @type boolean
-        @default true        
+        @default true
         **/
         clear: true
     });
 
-    $.fn.editabletypes.typeaheadjs = Constructor;      
-    
+    $.fn.editabletypes.typeaheadjs = Constructor;
 }(window.jQuery));

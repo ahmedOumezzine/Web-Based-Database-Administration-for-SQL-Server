@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace WebBased_Database_SQLServer.Controllers
@@ -18,7 +15,7 @@ namespace WebBased_Database_SQLServer.Controllers
             return View();
         }
 
-        public ActionResult show(String name,String tablename)
+        public ActionResult show(String name, String tablename)
         {
             ViewBag.database_name = name;
             ViewBag.tablename = tablename;
@@ -26,7 +23,7 @@ namespace WebBased_Database_SQLServer.Controllers
             string constr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             using (SqlConnection con = new SqlConnection(constr))
             {
-                string query = "SELECT * FROM [" + name+ "].[dbo].[" + tablename+ "];";
+                string query = "SELECT * FROM [" + name + "].[dbo].[" + tablename + "];";
                 using (SqlCommand cmd = new SqlCommand(query))
                 {
                     cmd.Connection = con;
@@ -40,13 +37,13 @@ namespace WebBased_Database_SQLServer.Controllers
             return View(ds);
         }
 
-   
         [HttpGet]
         public ActionResult add(String name, String tablename)
         {
             ViewBag.database_name = name;
             return View();
         }
+
         [HttpPost]
         public ActionResult add()
         {
@@ -59,6 +56,7 @@ namespace WebBased_Database_SQLServer.Controllers
             ViewBag.database_name = name;
             return View();
         }
+
         [HttpPost]
         public ActionResult Edit()
         {
@@ -71,6 +69,7 @@ namespace WebBased_Database_SQLServer.Controllers
             ViewBag.database_name = name;
             return View();
         }
+
         [HttpPost]
         public ActionResult Delet()
         {

@@ -183,7 +183,6 @@ div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:las
   padding-right: 0;
 }
 
-
 #container .table.dataTable tbody tr.selected {
     background-color: #fffab4;
 }

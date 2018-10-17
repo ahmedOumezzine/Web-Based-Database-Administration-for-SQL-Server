@@ -5,8 +5,6 @@
 //
 // - ThemeOn.net -
 
-
-
 $(document).on('nifty.ready', function () {
     // FLOT AREA CHART
     // =================================================================
@@ -38,7 +36,7 @@ $(document).on('nifty.ready', function () {
                 show: false,
                 radius: 2
             }
-            },
+        },
         {
             label: 'Visitors',
             data: visitor,
@@ -58,42 +56,41 @@ $(document).on('nifty.ready', function () {
                 show: false,
                 radius: 4
             }
-            }
-        ], {
-        series: {
-            lines: {
-                show: true
-            },
-            points: {
-                show: true
-            },
-            shadowSize: 0 // Drawing is faster without shadows
-        },
-        colors: ['#b5bfc5', '#efb239'],
-        legend: {
-            show: true,
-            position: 'nw',
-            margin: [15, 0]
-        },
-        grid: {
-            borderWidth: 0,
-            hoverable: true,
-            clickable: true
-        },
-        yaxis: {
-            ticks: 5,
-            tickColor: 'rgba(0,0,0,.1)'
-        },
-        xaxis: {
-            ticks: 7,
-            tickColor: 'transparent'
-        },
-        tooltip: {
-            show: true,
-            content: 'x: %x, y: %y'
         }
-    });
-
+    ], {
+            series: {
+                lines: {
+                    show: true
+                },
+                points: {
+                    show: true
+                },
+                shadowSize: 0 // Drawing is faster without shadows
+            },
+            colors: ['#b5bfc5', '#efb239'],
+            legend: {
+                show: true,
+                position: 'nw',
+                margin: [15, 0]
+            },
+            grid: {
+                borderWidth: 0,
+                hoverable: true,
+                clickable: true
+            },
+            yaxis: {
+                ticks: 5,
+                tickColor: 'rgba(0,0,0,.1)'
+            },
+            xaxis: {
+                ticks: 7,
+                tickColor: 'transparent'
+            },
+            tooltip: {
+                show: true,
+                content: 'x: %x, y: %y'
+            }
+        });
 
     // FLOT LINE CHART
     // =================================================================
@@ -118,7 +115,7 @@ $(document).on('nifty.ready', function () {
                 show: true,
                 radius: 4
             }
-            },
+        },
         {
             label: 'Visitors',
             data: visitor,
@@ -131,44 +128,41 @@ $(document).on('nifty.ready', function () {
                 show: true,
                 radius: 4
             }
-            }
-        ], {
-        series: {
-            lines: {
-                show: true
-            },
-            points: {
-                show: true
-            },
-            shadowSize: 0 // Drawing is faster without shadows
-        },
-        colors: ['#b5bfc5', '#177bbb'],
-        legend: {
-            show: true,
-            position: 'nw',
-            margin: [15, 0]
-        },
-        grid: {
-            borderWidth: 0,
-            hoverable: true,
-            clickable: true
-        },
-        yaxis: {
-            ticks: 5,
-            tickColor: 'rgba(0,0,0,.1)'
-        },
-        xaxis: {
-            ticks: 7,
-            tickColor: 'transparent'
-        },
-        tooltip: {
-            show: true,
-            content: 'x: %x, y: %y'
         }
-    });
-
-
-
+    ], {
+            series: {
+                lines: {
+                    show: true
+                },
+                points: {
+                    show: true
+                },
+                shadowSize: 0 // Drawing is faster without shadows
+            },
+            colors: ['#b5bfc5', '#177bbb'],
+            legend: {
+                show: true,
+                position: 'nw',
+                margin: [15, 0]
+            },
+            grid: {
+                borderWidth: 0,
+                hoverable: true,
+                clickable: true
+            },
+            yaxis: {
+                ticks: 5,
+                tickColor: 'rgba(0,0,0,.1)'
+            },
+            xaxis: {
+                ticks: 7,
+                tickColor: 'transparent'
+            },
+            tooltip: {
+                show: true,
+                content: 'x: %x, y: %y'
+            }
+        });
 
     // FLOT FULL CONTENT
     // =================================================================
@@ -221,46 +215,42 @@ $(document).on('nifty.ready', function () {
                 radius: 4
             }
         }
-        ], {
-        series: {
-            lines: {
-                show: true
+    ], {
+            series: {
+                lines: {
+                    show: true
+                },
+                points: {
+                    show: true
+                },
+                shadowSize: 0 // Drawing is faster without shadows
             },
-            points: {
-                show: true
+            colors: ['#b5bfc5', '#71ba51'],
+            legend: {
+                show: true,
+                position: 'nw',
+                margin: [15, 0]
             },
-            shadowSize: 0 // Drawing is faster without shadows
-        },
-        colors: ['#b5bfc5', '#71ba51'],
-        legend: {
-            show: true,
-            position: 'nw',
-            margin: [15, 0]
-        },
-        grid: {
-            borderWidth: 0,
-            hoverable: true,
-            clickable: true
-        },
-        yaxis: {
-            show: false,
-            ticks: 5,
-            tickColor: 'rgba(0,0,0,.1)'
-        },
-        xaxis: {
-            show: false,
-            ticks: 7,
-            tickColor: 'transparent'
-        },
-        tooltip: {
-            show: true,
-            content: 'x: %x, y: %y'
-        }
-    });
-
-
-
-
+            grid: {
+                borderWidth: 0,
+                hoverable: true,
+                clickable: true
+            },
+            yaxis: {
+                show: false,
+                ticks: 5,
+                tickColor: 'rgba(0,0,0,.1)'
+            },
+            xaxis: {
+                show: false,
+                ticks: 7,
+                tickColor: 'transparent'
+            },
+            tooltip: {
+                show: true,
+                content: 'x: %x, y: %y'
+            }
+        });
 
     // FLOT BAR CHART
     // =================================================================
@@ -310,14 +300,6 @@ $(document).on('nifty.ready', function () {
         }
     });
 
-
-
-
-
-
-
-
-
     // FLOT DONUTS CHART
     // =================================================================
     // Require Flot Charts
@@ -359,10 +341,6 @@ $(document).on('nifty.ready', function () {
             defaultTheme: false
         }
     });
-
-
-
-
 
     // FLOT PIE CHART
     // =================================================================
@@ -421,9 +399,6 @@ $(document).on('nifty.ready', function () {
         }
     });
 
-
-
-
     // FLOT REALTIME
     // =================================================================
     // Require Flot Charts
@@ -437,7 +412,6 @@ $(document).on('nifty.ready', function () {
         totalPoints = 300;
 
     function getRandomData() {
-
         if (data.length > 0)
             data = data.slice(1);
 
@@ -522,5 +496,4 @@ $(document).on('nifty.ready', function () {
     }
 
     update();
-
 });

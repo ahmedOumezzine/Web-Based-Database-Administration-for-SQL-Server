@@ -1,4 +1,3 @@
-
 // Form-File-Upload.js
 // ====================================================================
 // This file should not be included in your project.
@@ -6,9 +5,7 @@
 //
 // - ThemeOn.net -
 
-
-$(document).on('nifty.ready', function() {
-
+$(document).on('nifty.ready', function () {
     // DROPZONE.JS
     // =================================================================
     // Require Dropzone
@@ -22,22 +19,18 @@ $(document).on('nifty.ready', function() {
         //maxFiles: 25,
 
         // The setting up of the dropzone
-        init: function() {
-        var myDropzone = this;
-        //  Here's the change from enyo's tutorial...
-        //  $("#submit-all").click(function (e) {
-        //  e.preventDefault();
-        //  e.stopPropagation();
-        //  myDropzone.processQueue();
+        init: function () {
+            var myDropzone = this;
+            //  Here's the change from enyo's tutorial...
+            //  $("#submit-all").click(function (e) {
+            //  e.preventDefault();
+            //  e.stopPropagation();
+            //  myDropzone.processQueue();
             //
-        //}
-        //    );
-
+            //}
+            //    );
         }
-
     }
-
-
 
     // DROPZONE.JS WITH BOOTSTRAP'S THEME
     // =================================================================
@@ -63,39 +56,36 @@ $(document).on('nifty.ready', function() {
         clickable: ".fileinput-button" // Define the element that should be used as click trigger to select files.
     });
 
-
-    myDropzone.on("addedfile", function(file) {
+    myDropzone.on("addedfile", function (file) {
         // Hookup the button
         uplodaBtn.prop('disabled', false);
         removeBtn.prop('disabled', false);
     });
 
     // Update the total progress bar
-    myDropzone.on("totaluploadprogress", function(progress) {
-        $("#dz-total-progress .progress-bar").css({'width' : progress + "%"});
+    myDropzone.on("totaluploadprogress", function (progress) {
+        $("#dz-total-progress .progress-bar").css({ 'width': progress + "%" });
     });
 
-    myDropzone.on("sending", function(file) {
+    myDropzone.on("sending", function (file) {
         // Show the total progress bar when upload starts
         document.querySelector("#dz-total-progress").style.opacity = "1";
     });
 
     // Hide the total progress bar when nothing's uploading anymore
-    myDropzone.on("queuecomplete", function(progress) {
+    myDropzone.on("queuecomplete", function (progress) {
         document.querySelector("#dz-total-progress").style.opacity = "0";
     });
 
-
     // Setup the buttons for all transfers
-    uplodaBtn.on('click', function() {
+    uplodaBtn.on('click', function () {
         //Upload all files
         //myDropzone.enqueueFiles(myDropzone.getFilesWithStatus(Dropzone.ADDED));
     });
 
-    removeBtn.on('click', function() {
+    removeBtn.on('click', function () {
         myDropzone.removeAllFiles(true);
         uplodaBtn.prop('disabled', true);
         removeBtn.prop('disabled', true);
     });
-
 });

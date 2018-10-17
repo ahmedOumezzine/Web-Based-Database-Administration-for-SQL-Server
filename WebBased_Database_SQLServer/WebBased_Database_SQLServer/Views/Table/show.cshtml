@@ -1,11 +1,13 @@
 ﻿@using System.Data
 @model DataSet
 @{
-    ViewBag.Title = "show";
+                /**/
 
-    var ctx = new WebBased_Database_SQLServer.Models.ApplicationDbContext();
-    string sql = "SELECT TABLE_CATALOG,TABLE_SCHEMA,COLUMN_NAME,ORDINAL_POSITION,IS_NULLABLE,DATA_TYPE FROM " + ViewBag.database_name + ".INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '" + ViewBag.tablename + "'";
-    var Columns = ctx.Database.SqlQuery<WebBased_Database_SQLServer.Models.Column>(sql).OrderBy(x => x.ORDINAL_POSITION).ToList();
+                ViewBag.Title = "show";
+
+                var ctx = new WebBased_Database_SQLServer.Models.ApplicationDbContext();
+                string sql = "SELECT TABLE_CATALOG,TABLE_SCHEMA,COLUMN_NAME,ORDINAL_POSITION,IS_NULLABLE,DATA_TYPE FROM " + ViewBag.database_name + ".INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '" + ViewBag.tablename + "'";
+                var Columns = ctx.Database.SqlQuery<WebBased_Database_SQLServer.Models.Column>(sql).OrderBy(x => x.ORDINAL_POSITION).ToList();
 
 }
 
@@ -33,13 +35,12 @@
                             @foreach (var row in Columns)
                             {
                                 <tr>
-                                      <td>@row.COLUMN_NAME</td>
-                                      <td>@row.TABLE_SCHEMA</td>
-                                      <td>@row.COLUMN_NAME</td>
-                                      <td>@row.ORDINAL_POSITION</td>
-                                      <td>@row.IS_NULLABLE</td>
-                                      <td>@row.DATA_TYPE</td>
-                                   
+                                    <td>@row.COLUMN_NAME</td>
+                                    <td>@row.TABLE_SCHEMA</td>
+                                    <td>@row.COLUMN_NAME</td>
+                                    <td>@row.ORDINAL_POSITION</td>
+                                    <td>@row.IS_NULLABLE</td>
+                                    <td>@row.DATA_TYPE</td>
                                 </tr>
                             }
                         </tbody>
@@ -71,23 +72,23 @@
                         <tbody>
                             @foreach (DataRow row in Model.Tables[0].Rows)
                             {
-                            <tr>
-                                @foreach (var Column in Columns)
-                                {
-                                    @*if (Column.DATA_TYPE == "varbinary")
+                                <tr>
+                                    @foreach (var Column in Columns)
                                     {
-                                        byte[] fileFromDatabase = (byte[])row["" + Column.COLUMN_NAME + ""];
-                                        var imgSrc = String.Format("data:image/png;base64,{0}", Convert.ToBase64String(fileFromDatabase));
-                                <td> 
-                                    <img src="@imgSrc"  style=" height: 115px; "/>
-                                </td>
-                                    }
-                                    else
-                                    {*@
+                                        @*if (Column.DATA_TYPE == "varbinary")
+                                                {
+                                                    byte[] fileFromDatabase = (byte[])row["" + Column.COLUMN_NAME + ""];
+                                                    var imgSrc = String.Format("data:image/png;base64,{0}", Convert.ToBase64String(fileFromDatabase));
+                                            <td>
+                                                <img src="@imgSrc"  style=" height: 115px; " />
+                                            </td>
+                                                }
+                                                else
+                                                {*@
                                         <td>@row["" + @Column.COLUMN_NAME + ""]</td>
-                                    @*}*@
-                                }
-                            </tr>
+                                        @*}*@
+                                    }
+                                </tr>
                             }
                         </tbody>
                     </table>

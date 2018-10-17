@@ -1,4 +1,3 @@
-
 // Tables-FooTable.js
 // ====================================================================
 // This file should not be included in your project.
@@ -6,11 +5,7 @@
 //
 // - ThemeOn.net -
 
-
-
-$(document).on('nifty.ready', function() {
-
-
+$(document).on('nifty.ready', function () {
     // FOO TABLES
     // =================================================================
     // Require FooTable
@@ -18,42 +13,29 @@ $(document).on('nifty.ready', function() {
     // http://fooplugins.com/footable-demos/
     // =================================================================
 
-
     // Row Toggler
     // -----------------------------------------------------------------
     $('#demo-foo-row-toggler').footable();
-
-
-
 
     // Expand / Collapse All Rows
     // -----------------------------------------------------------------
     var fooColExp = $('#demo-foo-col-exp');
     fooColExp.footable().trigger('footable_expand_first_row');
 
-
-    $('#demo-foo-collapse').on('click', function(){
+    $('#demo-foo-collapse').on('click', function () {
         fooColExp.trigger('footable_collapse_all');
     });
-    $('#demo-foo-expand').on('click', function(){
+    $('#demo-foo-expand').on('click', function () {
         fooColExp.trigger('footable_expand_all');
     })
 
-
-
-
-
     // Accordion
     // -----------------------------------------------------------------
-    $('#demo-foo-accordion').footable().on('footable_row_expanded', function(e) {
-        $('#demo-foo-accordion tbody tr.footable-detail-show').not(e.row).each(function() {
+    $('#demo-foo-accordion').footable().on('footable_row_expanded', function (e) {
+        $('#demo-foo-accordion tbody tr.footable-detail-show').not(e.row).each(function () {
             $('#demo-foo-accordion').data('footable').toggleDetail(this);
         });
     });
-
-
-
-
 
     // Pagination
     // -----------------------------------------------------------------
@@ -64,12 +46,6 @@ $(document).on('nifty.ready', function() {
         $('#demo-foo-pagination').data('page-size', pageSize);
         $('#demo-foo-pagination').trigger('footable_initialized');
     });
-
-
-
-
-
-
 
     // Filtering
     // -----------------------------------------------------------------
@@ -83,27 +59,19 @@ $(document).on('nifty.ready', function() {
     // Filter status
     $('#demo-foo-filter-status').change(function (e) {
         e.preventDefault();
-        filtering.trigger('footable_filter', {filter: $(this).val()});
+        filtering.trigger('footable_filter', { filter: $(this).val() });
     });
 
     // Search input
     $('#demo-foo-search').on('input', function (e) {
         e.preventDefault();
-        filtering.trigger('footable_filter', {filter: $(this).val()});
+        filtering.trigger('footable_filter', { filter: $(this).val() });
     });
-
-
-
-
-
-
-
 
     // Add & Remove Row
     // -----------------------------------------------------------------
     var addrow = $('#demo-foo-addrow');
-    addrow.footable().on('click', '.demo-delete-row', function() {
-
+    addrow.footable().on('click', '.demo-delete-row', function () {
         //get the footable object
         var footable = addrow.data('footable');
 
@@ -117,12 +85,11 @@ $(document).on('nifty.ready', function() {
     // Search input
     $('#demo-input-search2').on('input', function (e) {
         e.preventDefault();
-        addrow.trigger('footable_filter', {filter: $(this).val()});
+        addrow.trigger('footable_filter', { filter: $(this).val() });
     });
 
     // Add Row Button
-    $('#demo-btn-addrow').click(function() {
-
+    $('#demo-btn-addrow').click(function () {
         //get the footable object
         var footable = addrow.data('footable');
 

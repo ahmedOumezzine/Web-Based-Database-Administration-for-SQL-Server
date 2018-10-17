@@ -1,4 +1,3 @@
-
 // Tables-BS-Table.js
 // ====================================================================
 // This file should not be included in your project.
@@ -6,11 +5,7 @@
 //
 // - ThemeOn.net -
 
-
-
-$(document).on('nifty.ready', function() {
-
-
+$(document).on('nifty.ready', function () {
     // BOOTSTRAP TABLES USING FONT AWESOME ICONS
     // =================================================================
     // Require Bootstrap Table
@@ -26,10 +21,6 @@ $(document).on('nifty.ready', function() {
         detailOpen: 'demo-psi-add',
         detailClose: 'demo-psi-remove'
     }
-
-
-
-
 
     // EDITABLE - COMBINATION WITH X-EDITABLE
     // =================================================================
@@ -47,7 +38,7 @@ $(document).on('nifty.ready', function() {
         url: 'data/bs-table.json',
         columns: [{
             field: 'id',
-            formatter:'invoiceFormatter',
+            formatter: 'invoiceFormatter',
             title: 'Invoice'
         }, {
             field: 'name',
@@ -68,7 +59,7 @@ $(document).on('nifty.ready', function() {
             field: 'status',
             align: 'center',
             title: 'Status',
-            formatter:'statusFormatter'
+            formatter: 'statusFormatter'
         }, {
             field: 'track',
             title: 'Tracking Number',
@@ -77,8 +68,6 @@ $(document).on('nifty.ready', function() {
             }
         }]
     });
-
-
 
     // X-EDITABLE USING FONT AWESOME ICONS
     // =================================================================
@@ -89,23 +78,19 @@ $(document).on('nifty.ready', function() {
     // http://fortawesome.github.io/Font-Awesome/icons/
     // =================================================================
     $.fn.editableform.buttons =
-        '<button type="submit" class="btn btn-primary editable-submit">'+
-            '<i class="fa fa-fw fa-check"></i>'+
-        '</button>'+
-        '<button type="button" class="btn btn-default editable-cancel">'+
-            '<i class="fa fa-fw fa-times"></i>'+
+        '<button type="submit" class="btn btn-primary editable-submit">' +
+        '<i class="fa fa-fw fa-check"></i>' +
+        '</button>' +
+        '<button type="button" class="btn btn-default editable-cancel">' +
+        '<i class="fa fa-fw fa-times"></i>' +
         '</button>';
-
-
-
-
 
     // BOOTSTRAP TABLE - CUSTOM TOOLBAR
     // =================================================================
     // Require Bootstrap Table
     // http://bootstrap-table.wenzhixin.net.cn/
     // =================================================================
-    var $table = $('#demo-custom-toolbar'),	$remove = $('#demo-delete-row');
+    var $table = $('#demo-custom-toolbar'), $remove = $('#demo-delete-row');
 
     $table.on('check.bs.table uncheck.bs.table check-all.bs.table uncheck-all.bs.table', function () {
         $remove.prop('disabled', !$table.bootstrapTable('getSelections').length);
@@ -121,17 +106,11 @@ $(document).on('nifty.ready', function() {
         });
         $remove.prop('disabled', true);
     });
-
-
 });
-
-
-
 
 // FORMAT COLUMN
 // Use "data-formatter" on HTML to format the display of bootstrap table column.
 // =================================================================
-
 
 // Sample format for Invoice Column.
 // =================================================================
@@ -139,17 +118,11 @@ function invoiceFormatter(value, row) {
     return '<a href="#" class="btn-link" > Order #' + value + '</a>';
 }
 
-
-
-
 // Sample Format for User Name Column.
 // =================================================================
 function nameFormatter(value, row) {
     return '<a href="#" class="btn-link" > ' + value + '</a>';
 }
-
-
-
 
 // Sample Format for Order Date Column.
 // =================================================================
@@ -158,34 +131,28 @@ function dateFormatter(value, row) {
     return '<span class="text-muted"><i class="fa fa-clock-o"></i> ' + value + '</span>';
 }
 
-
-
 // Sample Format for Order Status Column.
 // =================================================================
 function statusFormatter(value, row) {
     var labelColor;
     if (value == "Paid") {
         labelColor = "success";
-    }else if(value == "Unpaid"){
+    } else if (value == "Unpaid") {
         labelColor = "warning";
-    }else if(value == "Shipped"){
+    } else if (value == "Shipped") {
         labelColor = "info";
-    }else if(value == "Refunded"){
+    } else if (value == "Refunded") {
         labelColor = "danger";
     }
     var icon = row.id % 2 === 0 ? 'fa-star' : 'fa-user';
-    return '<div class="label label-table label-'+ labelColor+'"> ' + value + '</div>';
+    return '<div class="label label-table label-' + labelColor + '"> ' + value + '</div>';
 }
-
-
 
 // Sample Format for Tracking Number Column.
 // =================================================================
 function trackFormatter(value, row) {
     if (value) return '<i class="fa fa-plane"></i> ' + value;
 }
-
-
 
 // Sort Price Column
 // =================================================================
@@ -196,4 +163,3 @@ function priceSorter(a, b) {
     if (a < b) return -1;
     return 0;
 }
-

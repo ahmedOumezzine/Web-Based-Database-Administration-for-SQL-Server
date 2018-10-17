@@ -5,12 +5,10 @@
 //
 // - ThemeOn.net -
 
-
-$(document).on('nifty.ready', function() {
-    jQuery.fn.selectText = function(){
-
-        this.find('input').each(function() {
-            if($(this).prev().length == 0 || !$(this).prev().hasClass('p_copy')) {
+$(document).on('nifty.ready', function () {
+    jQuery.fn.selectText = function () {
+        this.find('input').each(function () {
+            if ($(this).prev().length == 0 || !$(this).prev().hasClass('p_copy')) {
                 $('<p class="p_copy" style="position: absolute; z-index: -1;"></p>').insertBefore($(this));
             }
             $(this).prev().html($(this).val());
@@ -31,7 +29,7 @@ $(document).on('nifty.ready', function() {
         }
     };
 
-    $('.demo-icon, .demo-prem-icon-list p').on('click',function(e){
+    $('.demo-icon, .demo-prem-icon-list p').on('click', function (e) {
         $(this).children('span').not('.text-muted').selectText();
     })
- });
+});

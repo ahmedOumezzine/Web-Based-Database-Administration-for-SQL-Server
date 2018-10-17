@@ -1,4 +1,3 @@
-
 // Sparklines.js
 // ====================================================================
 // This file should not be included in your project.
@@ -6,10 +5,7 @@
 //
 // - ThemeOn.net -
 
-
 $(document).on('nifty.ready', function () {
-
-
     // SPARKLINES AREA CHART
     // =================================================================
     // Require sparkline
@@ -56,8 +52,6 @@ $(document).on('nifty.ready', function () {
     };
     areaSparklines_2();
 
-
-
     // SPARKLINES LINE CHART
     // =================================================================
     // Require sparkline
@@ -65,7 +59,7 @@ $(document).on('nifty.ready', function () {
     // http://omnipotent.net/jquery.sparkline/#s-about
     // =================================================================
     var lineSparklines = function () {
-        $('#demo-sparklines-line-1').sparkline([945, 754, 805, 855, 678, 987, 1026, 885, 878, 922, 875, ], {
+        $('#demo-sparklines-line-1').sparkline([945, 754, 805, 855, 678, 987, 1026, 885, 878, 922, 875,], {
             type: 'line',
             width: '100%',
             height: '70',
@@ -87,9 +81,8 @@ $(document).on('nifty.ready', function () {
     };
     lineSparklines();
 
-
     var lineSparklines_2 = function () {
-        $('#demo-sparklines-line-2').sparkline([945, 754, 805, 855, 678, 987, 1026, 885, 878, 922, 875, ], {
+        $('#demo-sparklines-line-2').sparkline([945, 754, 805, 855, 678, 987, 1026, 885, 878, 922, 875,], {
             type: 'line',
             width: '100%',
             height: '70',
@@ -110,8 +103,6 @@ $(document).on('nifty.ready', function () {
         });
     };
     lineSparklines_2();
-
-
 
     // SPARKLINE BAR CHART
     // =================================================================
@@ -140,8 +131,6 @@ $(document).on('nifty.ready', function () {
     };
     barSparklines();
 
-
-
     var barEl_2 = $('#demo-sparklines-bar-2');
     var barSpacing_2 = 1;
     var barSparklines_2 = function () {
@@ -158,9 +147,6 @@ $(document).on('nifty.ready', function () {
     };
     barSparklines_2();
 
-
-
-
     // SPARKLINE WITH RESPONSIVE LAYOUT
     // =================================================================
     $(window).on('resize', function () {
@@ -172,16 +158,7 @@ $(document).on('nifty.ready', function () {
         barSparklines_2();
     });
 
-
-
-
-
-
     // =================================================================
-
-
-
-
 
     // Change the default settings as listed in the common options below
     $.fn.sparkline.defaults.common.lineColor = '#03a9f4';
@@ -197,18 +174,15 @@ $(document).on('nifty.ready', function () {
     $.fn.sparkline.defaults.bar.stackedBarColor = ['#7eaf55', '#ff4b4b'];
     $.fn.sparkline.defaults.bar.negBarColor = '#ff4b4b';
 
-
     /** Draw all the example sparklines on the index page **/
 
     // Line charts taking their values from the tag
     $('.demo-sparkline').sparkline();
 
-
     // Bar charts using inline values
     $('.demo-sparkbar').sparkline('html', {
         type: 'bar'
     });
-
 
     // Composite line charts, the second using values supplied via javascript
     $('#demo-compositeline').sparkline('html', {
@@ -224,14 +198,12 @@ $(document).on('nifty.ready', function () {
         chartRangeMax: 10
     });
 
-
     // Line charts with normal range marker
     $('#demo-normalline').sparkline('html', {
         fillColor: false,
         normalRangeMin: -1,
         normalRangeMax: 8
     });
-
 
     // Bar + line composite charts
     $('#demo-compositebar').sparkline('html', {
@@ -242,7 +214,6 @@ $(document).on('nifty.ready', function () {
         fillColor: false,
         lineColor: '#ff4b4b'
     });
-
 
     // Discrete charts
     $('#demo-discrete1').sparkline('html', {
@@ -255,7 +226,6 @@ $(document).on('nifty.ready', function () {
         thresholdValue: 4
     });
 
-
     // Customized line chart
     $('#demo-linecustom').sparkline('html', {
         height: '1.5em',
@@ -266,7 +236,6 @@ $(document).on('nifty.ready', function () {
         spotColor: '#77f',
         spotRadius: 3
     });
-
 
     // Tri-state charts using inline values
     $('#demo-sparktristate').sparkline('html', {
@@ -280,14 +249,10 @@ $(document).on('nifty.ready', function () {
         }
     });
 
-
     // Pie charts
     $('.demo-sparkpie').sparkline('html', {
         type: 'pie',
         height: '50px',
-        sliceColors: ['#03a9f4','#ff4b4b','#7eaf55']
+        sliceColors: ['#03a9f4', '#ff4b4b', '#7eaf55']
     });
-
-
-
 });

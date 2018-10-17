@@ -1,4 +1,3 @@
-
 // Dashboard-2.js
 // ====================================================================
 // This file should not be included in your project.
@@ -6,9 +5,7 @@
 //
 // - ThemeOn.net -
 
-
-$(document).on('nifty.ready', function() {
-
+$(document).on('nifty.ready', function () {
     // FLOT CHART
     // =================================================================
     // Require Flot Charts
@@ -24,41 +21,39 @@ $(document).on('nifty.ready', function() {
         {
             label: "Students",
             data: d1
-        },{
+        }, {
             label: "Parents",
             data: d2
-        },{
+        }, {
             label: "Teachers",
             data: d3
-        }],{
-        series: {
-            bars: {
+        }], {
+            series: {
+                bars: {
+                    show: true,
+                    lineWidth: 0,
+                    barWidth: 0.25,
+                    align: "center",
+                    order: 1,
+                    fillColor: { colors: [{ opacity: .9 }, { opacity: .9 }] }
+                }
+            },
+            colors: ['#03a9f4', '#ffb300', '#e3e8ee'],
+            grid: {
+                borderWidth: 0,
+                hoverable: true,
+                clickable: true
+            },
+            yaxis: {
+                ticks: 4, tickColor: 'rgba(0,0,0,.02)'
+            },
+            xaxis: {
+                ticks: 7,
+                tickColor: 'transparent'
+            },
+            tooltip: {
                 show: true,
-                lineWidth: 0,
-                barWidth: 0.25,
-                align: "center",
-                order: 1,
-                fillColor: { colors: [ { opacity: .9 }, { opacity: .9 } ] }
+                content: "<div class='flot-tooltip text-center'><h5 class='text-main'>%s</h5>%y.0 </div>"
             }
-        },
-        colors: ['#03a9f4', '#ffb300', '#e3e8ee'],
-        grid: {
-            borderWidth: 0,
-            hoverable: true,
-            clickable: true
-        },
-        yaxis: {
-            ticks: 4, tickColor: 'rgba(0,0,0,.02)'
-        },
-        xaxis: {
-            ticks: 7,
-            tickColor: 'transparent'
-        },
-        tooltip: {
-            show: true,
-            content: "<div class='flot-tooltip text-center'><h5 class='text-main'>%s</h5>%y.0 </div>"
-        }
-    });
-
-
+        });
 });

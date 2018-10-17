@@ -4,8 +4,6 @@
 
     ViewBag.Title = "Index";
 
-
-
 }
 
 <div class="panel">
@@ -21,7 +19,7 @@
                             <tr>
                                 @foreach (DataColumn c in Model.Tables[0].Columns)  //loop through the columns.
                                 {
-                                <th>@c.ColumnName</th>
+                                    <th>@c.ColumnName</th>
                                 }
                             </tr>
                         </thead>
@@ -29,13 +27,13 @@
                         <tbody>
                             @foreach (DataRow row in Model.Tables[0].Rows)
                             {
-                            <tr>
-                                @foreach (var item in row.ItemArray)
-                                {
-                                    <td>@item</td>
+                                <tr>
+                                    @foreach (var item in row.ItemArray)
+                                    {
+                                        <td>@item</td>
 
-                                }
-                            </tr>
+                                    }
+                                </tr>
                             }
                         </tbody>
                     </table>
@@ -53,7 +51,7 @@
     <script src="~/Content/plugins\datatables\extensions\Responsive\js\dataTables.responsive.min.js"></script>
     <script>
         $(document).ready(function () {
- 
+
             $('#demo3-dt-basic').DataTable({
                 "scrollX": true
             });

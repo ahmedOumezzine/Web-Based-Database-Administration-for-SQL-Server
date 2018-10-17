@@ -1,4 +1,3 @@
-
 // Buttons.js
 // ====================================================================
 // This file should not be included in your project.
@@ -6,11 +5,7 @@
 //
 // - ThemeOn.net -
 
-
-$(document).on('nifty.ready', function() {
-
-
-
+$(document).on('nifty.ready', function () {
     // STATE BUTTON
     // =================================================================
     // Require Bootstrap Button
@@ -21,12 +16,9 @@ $(document).on('nifty.ready', function() {
         var btn = $(this).button('loading')
         // business logic...
 
-        var doSomething = setTimeout(function(){
+        var doSomething = setTimeout(function () {
             clearTimeout(doSomething);
             btn.button('reset')
         }, 3000);
     });
-
-
-
 });

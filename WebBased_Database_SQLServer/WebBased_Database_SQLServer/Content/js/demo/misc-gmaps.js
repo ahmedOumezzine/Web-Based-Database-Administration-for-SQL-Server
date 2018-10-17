@@ -1,4 +1,3 @@
-
 // Misc-Gmaps.js
 // ====================================================================
 // This file should not be included in your project.
@@ -6,19 +5,13 @@
 //
 // - ThemeOn.net -
 
-
-
-$(document).on('nifty.ready', function() {
-
-
+$(document).on('nifty.ready', function () {
     // GMAPS
     // =================================================================
     // Require gmaps
     // -----------------------------------------------------------------
     // http://hpneo.github.io/gmaps/
     // =================================================================
-
-
 
     // Marker
     // =================================================================
@@ -31,7 +24,7 @@ $(document).on('nifty.ready', function() {
         lat: 37.336095,
         lng: -121.8885431,
         title: 'Location',
-        click: function(e) {
+        click: function (e) {
             $.niftyNoty({
                 type: "info",
                 icon: "fa fa-info",
@@ -41,13 +34,9 @@ $(document).on('nifty.ready', function() {
             });
         },
         infoWindow: {
-             content: '<div>HTML Content</div>'
+            content: '<div>HTML Content</div>'
         }
     });
-
-
-
-
 
     // Street View Panoramas
     // =================================================================
@@ -56,10 +45,6 @@ $(document).on('nifty.ready', function() {
         lat: 37.336095,
         lng: -121.8885431
     });
-
-
-
-
 
     // Overlay
     // =================================================================
@@ -76,10 +61,6 @@ $(document).on('nifty.ready', function() {
         horizontalAlign: 'center'
     });
 
-
-
-
-
     // Map Type
     // =================================================================
     var mapType = new GMaps({
@@ -87,11 +68,11 @@ $(document).on('nifty.ready', function() {
         lat: 37.336095,
         lng: -121.8885431,
         mapTypeControlOptions: {
-            mapTypeIds : ["hybrid", "roadmap", "satellite", "terrain", "osm", "cloudmade"]
+            mapTypeIds: ["hybrid", "roadmap", "satellite", "terrain", "osm", "cloudmade"]
         }
     });
     mapType.addMapType("osm", {
-        getTileUrl: function(coord, zoom) {
+        getTileUrl: function (coord, zoom) {
             return "http://tile.openstreetmap.org/" + zoom + "/" + coord.x + "/" + coord.y + ".png";
         },
         tileSize: new google.maps.Size(256, 256),
@@ -99,7 +80,7 @@ $(document).on('nifty.ready', function() {
         maxZoom: 18
     });
     mapType.addMapType("cloudmade", {
-        getTileUrl: function(coord, zoom) {
+        getTileUrl: function (coord, zoom) {
             return "http://b.tile.cloudmade.com/8ee2a50541944fb9bcedded5165f09d9/1/256/" + zoom + "/" + coord.x + "/" + coord.y + ".png";
         },
         tileSize: new google.maps.Size(256, 256),
@@ -107,11 +88,6 @@ $(document).on('nifty.ready', function() {
         maxZoom: 18
     });
     mapType.setMapTypeId("osm");
-
-
-
-
-
 
     // Geocoding
     // =================================================================
@@ -121,12 +97,12 @@ $(document).on('nifty.ready', function() {
         lng: -77.028333
     });
 
-    $('#demo-geocoding-form').submit(function(e){
+    $('#demo-geocoding-form').submit(function (e) {
         e.preventDefault();
         GMaps.geocode({
             address: $('#demo-geocoding-address').val().trim(),
-            callback: function(results, status){
-                if(status=='OK'){
+            callback: function (results, status) {
+                if (status == 'OK') {
                     var latlng = results[0].geometry.location;
                     geomap.setCenter(latlng.lat(), latlng.lng());
                     geomap.addMarker({
@@ -137,5 +113,4 @@ $(document).on('nifty.ready', function() {
             }
         })
     })
-
 });

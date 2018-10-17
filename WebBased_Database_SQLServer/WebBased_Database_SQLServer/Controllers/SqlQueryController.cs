@@ -1,10 +1,8 @@
-﻿using System;
+﻿using Microsoft.SqlServer.TransactSql.ScriptDom;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using Microsoft.SqlServer.TransactSql.ScriptDom;
 
 namespace WebBased_Database_SQLServer.Controllers
 {
@@ -15,6 +13,7 @@ namespace WebBased_Database_SQLServer.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Index(String RequestSQL)
         {

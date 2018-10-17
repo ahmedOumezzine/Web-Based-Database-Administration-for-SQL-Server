@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace WebBased_Database_SQLServer.Models
+﻿namespace WebBased_Database_SQLServer.Models
 {
     public class Column
     {
@@ -13,6 +8,5 @@ namespace WebBased_Database_SQLServer.Models
         public int ORDINAL_POSITION { get; set; }
         public string IS_NULLABLE { get; set; }
         public string DATA_TYPE { get; set; }
-
     }
 }

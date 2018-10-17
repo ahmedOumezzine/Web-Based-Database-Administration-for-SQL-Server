@@ -1,4 +1,3 @@
-
 // Widgets.js
 // ====================================================================
 // This file should not be included in your project.
@@ -6,10 +5,7 @@
 //
 // - ThemeOn.net -
 
-
-$(document).on('nifty.ready', function() {
-
-
+$(document).on('nifty.ready', function () {
     // REALTIME FLOT CHART
     // =================================================================
     // Require Flot Charts
@@ -19,7 +15,7 @@ $(document).on('nifty.ready', function() {
     // We use an inline data source in the example, usually data would
     // be fetched from a server
 
-    var data = [],  totalPoints = 100;
+    var data = [], totalPoints = 100;
 
     function getRandomData() {
         if (data.length > 0)
@@ -56,7 +52,7 @@ $(document).on('nifty.ready', function() {
                 lineWidth: 1,
                 show: true,
                 fill: true,
-                fillColor : "#d8d9d9"
+                fillColor: "#d8d9d9"
             },
             color: '#cccccc',
             shadowSize: 0	// Drawing is faster without shadows
@@ -81,8 +77,7 @@ $(document).on('nifty.ready', function() {
         }
     }
 
-
-    var plot = $.plot("#demo-realtime-chart", [ getRandomData() ], flotOptions);
+    var plot = $.plot("#demo-realtime-chart", [getRandomData()], flotOptions);
     function update() {
         plot.setData([getRandomData()]);
 
@@ -92,15 +87,6 @@ $(document).on('nifty.ready', function() {
         setTimeout(update, updateInterval);
     }
     update();
-
-
-
-
-
-
-
-
-
 
     // GAUGE PLUGIN
     // =================================================================
@@ -124,24 +110,12 @@ $(document).on('nifty.ready', function() {
         generateGradient: true
     };
 
-
     var target = document.getElementById('demo-gauge'); // your canvas element
     var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
     gauge.maxValue = 100; // set max gauge value
     gauge.animationSpeed = 32; // set animation speed (32 is default value)
     gauge.set(57); // set actual value
     gauge.setTextField(document.getElementById("demo-gauge-text"));
-
-
-
-
-
-
-
-
-
-
-
 
     // PIE CHART
     // =================================================================
@@ -150,23 +124,15 @@ $(document).on('nifty.ready', function() {
     // http://rendro.github.io/easy-pie-chart/
     // =================================================================
     $('#demo-pie-1').easyPieChart({
-        barColor :'#ffffff',
-        scaleColor:'#1B8F85',
-        trackColor : '#1B8F85',
-        lineCap : 'round',
-        lineWidth :8,
-        onStep: function(from, to, percent) {
+        barColor: '#ffffff',
+        scaleColor: '#1B8F85',
+        trackColor: '#1B8F85',
+        lineCap: 'round',
+        lineWidth: 8,
+        onStep: function (from, to, percent) {
             $(this.el).find('.pie-value').text(Math.round(percent) + '%');
         }
     });
-
-
-
-
-
-
-
-
 
     // MEDIUM WEATHER WIDGET
     // =================================================================
@@ -196,12 +162,6 @@ $(document).on('nifty.ready', function() {
     var skycons4 = new Skycons(skyconsOptions);
     skycons4.add("demo-weather-md-icon-4", Skycons.RAIN);
 
-
-
-
-
-
-
     // LARGE WEATHER WIDGET
     // =================================================================
     // Require sckycons
@@ -215,12 +175,10 @@ $(document).on('nifty.ready', function() {
         "resizeClear": true
     }
 
-
     /* Main Icon */
     var skycons = new Skycons(skyconsOptions);
     skycons.add("demo-weather-lg-icon-1", Skycons.CLEAR_DAY);
     skycons.play();
-
 
     skyconsOptions = {
         "color": "#595e62",
@@ -231,27 +189,14 @@ $(document).on('nifty.ready', function() {
     var skycons2 = new Skycons(skyconsOptions);
     skycons2.add("demo-weather-lg-icon-2", Skycons.CLOUDY);
 
-
     var skycons3 = new Skycons(skyconsOptions);
     skycons3.add("demo-weather-lg-icon-3", Skycons.PARTLY_CLOUDY_NIGHT);
-
 
     var skycons4 = new Skycons(skyconsOptions);
     skycons4.add("demo-weather-lg-icon-4", Skycons.RAIN);
 
-
     var skycons5 = new Skycons(skyconsOptions);
     skycons5.add("demo-weather-lg-icon-5", Skycons.PARTLY_CLOUDY_DAY);
-
-
-
-
-
-
-
-
-
-
 
     // SMALL WEATHER WIDGET
     // =================================================================
@@ -269,16 +214,6 @@ $(document).on('nifty.ready', function() {
     skycons.add("demo-weather-sm-icon", Skycons.RAIN);
     skycons.play();
 
-
-
-
-
-
-
-
-
-
-
     // EXTRA SMALL WEATHER WIDGET
     // =================================================================
     // Require sckycons
@@ -289,13 +224,6 @@ $(document).on('nifty.ready', function() {
     skycons.add("demo-weather-xs-icon-1", Skycons.CLEAR_DAY);
     skycons.play();
 
-
-
-
-
-
-
-
     // EXTRA SMALL WEATHER WIDGET
     // =================================================================
     // Require sckycons
@@ -305,6 +233,4 @@ $(document).on('nifty.ready', function() {
 
     skycons.add("demo-weather-xs-icon-2", Skycons.PARTLY_CLOUDY_DAY);
     skycons.play();
-
-
 });
